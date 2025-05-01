@@ -1,5 +1,4 @@
 #!name = 燕迟的github429
-
 [Rewrite]
 ^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language cn-hant
 ^https:\/\/github\.com\/ header-replace Accept-Language cn-hant
