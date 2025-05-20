@@ -1,0 +1,17 @@
+#!name=Spotify歌词翻译
+#!desc=通过有道翻译API实现歌词汉化
+#!author=6otho
+#!homepage=https://github.com/6otho
+#!loon_version=3.3+
+#!icon=https://raw.githubusercontent.com/tugepaopao/Image-Storage/master/cartoon/Cute/spotify.png
+
+[Argument]
+appid=input,tag=有道appid,desc=此处填写有道appid
+securityKey=input,tag=有道密钥,desc=此处填写有道密钥
+
+[Script]
+# 拦截歌词接口，注入本地 spotify.js
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/ script-path=https://raw.githubusercontent.com/6otho/loon-tool/main/spotify.js, requires-body=true, binary-body-mode=true, timeout=10, argument=[{appid},{securityKey}]
+
+[MITM]
+hostname = spclient.wg.spotify.com
