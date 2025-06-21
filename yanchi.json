@@ -1,4 +1,14 @@
 {
-  "name":"自用的", "description":"作者言希",
-   "icons":[
-     {"name":"yanxi", "url":"https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/yanxi.png"},
+  "image": {
+    "name": "yanxi.png",
+    "url": "https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/yanxi.png",
+    "type": "image/png",
+    "description": "An image hosted in the GitHub repository Ycxo-repo"
+  },
+  "metadata": {
+    "author": "YccccXo",
+    "repository": "https://github.com/YccccXo/Ycxo-repo",
+    "created": "2025-06-21",
+    "license": "MIT"
+  }
+}
