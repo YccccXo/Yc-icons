@@ -1,7 +1,8 @@
 {
 "name":"图标库",
 "description":"自用。", 
-"icons":[
+"icons":
+[
 {"name":"言希", "url":"https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/yanxi.PNG"},
 ]
 }
