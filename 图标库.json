@@ -3,9 +3,16 @@
 "description":"有好看的的图标也可以推荐给我，联系方式及作者@Y_ccccx。", 
 "icons":
 [
-{"name":"yanxi1", "url":"https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/tubiaoku/yanxi1.png"},
-{"name":"yanxi2", "url":"https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/tubiaoku/yanxi2.png"},
-{"name":"yanxi3", "url":"https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/tubiaoku/yanxi3.png"},
+  {
+    "name": "言希1",
+    "url": "https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/Icon-image/言希1.PNG"
+  },
+  {
+    "name": "言希2",
+    "url": "https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/Icon-image/言希2.PNG"
+  },
+  {
+    "name": "言希3",
+    "url": "https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/Icon-image/言希3.PNG"
+  }
 ]
-}
-
