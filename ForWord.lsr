@@ -1,5 +1,5 @@
 [rule]
-DOMAIN-SUFFIX,javday.app,proxy
+DOMAIN-SUFFIX,javday.app,direct
 DOMAIN-SUFFIX,pornhub.com,proxy
 DOMAIN-SUFFIX,xvideos.com,proxy
 DOMAIN-SUFFIX,xvideos-cdn.com,proxy
