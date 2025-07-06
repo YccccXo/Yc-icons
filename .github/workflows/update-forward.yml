@@ -1,9 +1,9 @@
 name: Auto Update forward.fwd
 
 on:
-  workflow_dispatch:  # ✅ 手动触发
+  workflow_dispatch:    # ✅ 手动触发
   schedule:
-    - cron: '0 2 * * *'  # 每天早上 2 点执行一次（UTC 时间）
+    - cron: '0 2 * * *'  # 每天早上 2 点（UTC）
 
 jobs:
   update-forward:
@@ -20,8 +20,7 @@ jobs:
 
       - name: Update forward.fwd
         run: |
-          curl -sSL https://gist.github.com/YccccXo/be2c867154a00e63bfa0d2eb44a77ed7/raw
-          
+          curl -sSL https://gist.github.com/YccccXo/be2c867154a00e63bfa0d2eb44a77ed7/raw -o forward.fwd
 
       - name: Commit and Push if file changed
         run: |
