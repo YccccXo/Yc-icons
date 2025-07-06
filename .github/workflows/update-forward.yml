@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 2 * * *'  # 每天早上 2 点（UTC）
 
+permissions:
+  contents: write       # ✅ 添加推送权限
+
 jobs:
   update-forward:
     runs-on: ubuntu-latest
@@ -24,10 +27,10 @@ jobs:
 
       - name: Commit and Push if file changed
         run: |
-          if git diff --quiet; then
+          git add forward.fwd
+          if git diff --cached --quiet; then
             echo "No changes detected, skipping commit."
           else
-            git add forward.fwd
-            git commit -m "Auto update forward.fwd on $(date +'%Y-%m-%d')"
+            git commit -m "🔄 Auto update forward.fwd on $(date +'%Y-%m-%d')"
             git push
           fi
