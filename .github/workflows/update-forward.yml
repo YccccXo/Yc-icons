@@ -20,7 +20,7 @@ jobs:
 
       - name: Update forward.fwd
         run: |
-          curl -sSL https://gist.github.com/YccccXo/be2c867154a00e63bfa0d2eb44a77ed7/raw -o forward.fwd
+          curl -sSL https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/forward.fwd -o forward.fwd
 
       - name: Commit and Push if file changed
         run: |
