@@ -11,26 +11,41 @@ permissions:
 jobs:
   update-forward:
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # 设置超时时间
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史记录
 
       - name: Set up Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Update forward.fwd
+      - name: Download forward.fwd
         run: |
-          curl -sSL https://raw.githubusercontent.com/YccccXo/Ycxo-repo/refs/heads/main/forward.fwd -o forward.fwd
+          # 使用重试机制增强稳定性
+          for i in {1..3}; do
+            curl -f -sSL https://raw.githubusercontent.com/YccccXo/Ycxo-repo/main/forward.fwd -o forward.fwd && break
+            sleep 5
+          done || exit 1
 
-      - name: Commit and Push if file changed
+      - name: Commit and Push changes
         run: |
-          git add forward.fwd
-          if git diff --cached --quiet; then
-            echo "No changes detected, skipping commit."
-          else
-            git commit -m "🔄 Auto update forward.fwd on $(date +'%Y-%m-%d')"
-            git push
+          # 检测文件变化
+          if git diff --quiet -- forward.fwd; then
+            echo "✅ No changes detected"
+            exit 0
           fi
+
+          # 配置身份信息
+          git add forward.fwd
+          git commit -m "🔄 Auto update forward.fwd on $(date -u +'%Y-%m-%d %H:%M UTC')"
+
+          # 避免推送冲突
+          git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)
+          git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
