@@ -1,1 +1,34 @@
+name: Auto Update forward.fwd
 
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天凌晨2点运行（UTC时间）
+  workflow_dispatch:     # 支持手动触发
+
+jobs:
+  update-forward:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Update forward.fwd
+        run: |
+          curl -sSL https://gist.github.com/YccccXo/be2c867154a00e63bfa0d2eb44a77ed7/raw
+          
+
+      - name: Commit and Push if file changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes detected, skipping commit."
+          else
+            git add forward.fwd
+            git commit -m "Auto update forward.fwd on $(date +'%Y-%m-%d')"
+            git push
+          fi
