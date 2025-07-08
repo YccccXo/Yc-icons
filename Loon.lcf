@@ -101,8 +101,6 @@ https://rule.kelee.one/Loon/China.lsr, policy=国内直连, tag=China, enabled=t
 [Plugin]
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/kuqueshuiyin.js/_end_/kuqueshuiyin.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=酷雀水印Vip, enabled=true
 https://kelee.one/Tool/Loon/Lpx/SevenCat_remove_ads.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js/_end_/netease.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=网易云, img-url=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/NeteaseCloudMusic.png, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
